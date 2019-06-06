@@ -19,13 +19,14 @@ client.on("ready", () => {
 
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
+  message.reply("@everyone BRUH MOMENT just got in fuck ya all")
    message.reply({embed: {
-    color: 16439902,
+    color: 16752896,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "HELP IS HERE",
+    title: "BRUH",
     fields: [{
         name: "ping",
         value: "Returns users ping."
@@ -84,12 +85,12 @@ client.on("message", async message => {
 
   if(command === "help")
  message.reply({embed: {
-    color: 16439902,
+    color: 16752896,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "HELP IS HERE",
+    title: "BRUH",
     fields: [{
         name: "ping",
         value: "Returns users ping."
