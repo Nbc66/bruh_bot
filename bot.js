@@ -171,7 +171,7 @@ client.on('message', (receivedMessage) => {
 			respond = true;
 			break;
 
-		case null !== msg.match("\\bruh\\b"):
+		case null !== msg.match("\\bbruh\\b"):
 			reply = "BRUH\n https://www.youtube.com/watch?v=NzishIREebw";
 			respond = true;
 			break;
