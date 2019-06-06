@@ -145,8 +145,8 @@ client.on('message', (receivedMessage) => {
 			respond = true;
 			break;
 
-		case msg.includes("nesquik"):
-			reply = "Do not mention my fucking name in vain";
+		case msg.includes("bruh"):
+			reply = "BRUH\n https://www.youtube.com/watch?v=NzishIREebw";
 			respond = true;
 			break;
 		//case msg.includes("so guys we did it"):
