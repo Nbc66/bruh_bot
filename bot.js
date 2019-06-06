@@ -4,7 +4,6 @@ const date = moment()
 const config = require("./config.json");
 const client = new Discord.Client();
 
-
 client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
   if(client.guilds.size == 1){
@@ -19,8 +18,21 @@ client.on("ready", () => {
 
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
-  generalChannel.send("@everyone BRUH MOMENT just got in fuck ya all\nUse !bruh for the prefix")
-   generalChannel.send({embed: {
+
+    let channelID;
+    let channels = guild.channels;
+    channelLoop:
+    for (let c of channels) {
+        let channelType = c[1].type;
+        if (channelType === "text") {
+            channelID = c[0];
+            break channelLoop;
+        }
+    }
+
+    let channel = client.channels.get(guild.systemChannelID || channelID);
+  channel.send("@everyone BRUH MOMENT just got in fuck ya all\nUse `!bruh` for the prefix");
+  channel.send({embed: {
     color: 16752896,
     author: {
       name: client.user.username,
@@ -115,7 +127,7 @@ client.on("message", async message => {
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
-
+   
    if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 100.
 
