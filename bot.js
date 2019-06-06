@@ -19,7 +19,7 @@ client.on("ready", () => {
 
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
-  message.reply("@everyone BRUH MOMENT just got in fuck ya all")
+  message.reply("@everyone BRUH MOMENT just got in fuck ya all\nUse !bruh for the prefix")
    message.reply({embed: {
     color: 16752896,
     author: {
