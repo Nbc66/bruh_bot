@@ -19,6 +19,31 @@ client.on("ready", () => {
 
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
+   message.reply({embed: {
+    color: 16439902,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "HELP IS HERE",
+    fields: [{
+        name: "ping",
+        value: "Returns users ping."
+      },
+      {
+        name: "purge",
+        value: "delets message select a number between 2 and 100(admin only)."
+      },
+      {
+        name: "Time",
+        value: "Tells the current time."
+      }
+    ],
+    footer: {
+      text: 'Bot made by Nbc66 and STANN.co'
+    }
+  }
+});
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
   if(client.guilds.size == 1){
 	  client.user.setActivity(`Serving ${client.guilds.size} server use !bruh help`);
@@ -145,7 +170,7 @@ client.on('message', (receivedMessage) => {
 			respond = true;
 			break;
 
-		case msg.includes("bruh"):
+		case null !== msg.match("\\bruh\\b"):
 			reply = "BRUH\n https://www.youtube.com/watch?v=NzishIREebw";
 			respond = true;
 			break;
