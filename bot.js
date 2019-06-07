@@ -216,4 +216,4 @@ client.on('message', (receivedMessage) => {
 	}
 })
 
-client.login("NTg2MTk5MzU3ODc1ODE0NDIw.XPkzrw.G9ZFFcHjU-KNhP07YIaBqksL48U")
+client.login("XXXXXX your client token")
